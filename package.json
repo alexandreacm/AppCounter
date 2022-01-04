@@ -20,7 +20,10 @@
     "react-native-vector-icons": "^9.0.0",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
-    "styled-components": "^5.3.3"
+    "@reduxjs/toolkit": "^1.5.0",
+    "styled-components": "^5.3.3",
+    "babel-plugin-transform-remove-console": "^6.9.4",
+    "react-native-testing-library": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -30,7 +33,23 @@
     "eslint": "^8.6.0",
     "jest": "^27.4.5",
     "metro-react-native-babel-preset": "^0.66.2",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "17.0.2",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-root-import": "^6.6.0",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-import-resolver-babel-module": "^5.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2",
+    "react-native-dotenv": "^2.4.3"
   },
   "jest": {
     "preset": "react-native"
