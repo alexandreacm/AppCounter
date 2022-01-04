@@ -3,26 +3,26 @@ module.exports = {
   plugins: ['react', 'prettier', 'react-hooks'],
   globals: {
     __DEV__: true,
-    fetch: false,
+    fetch: false
   },
   env: {
-    jest: true,
+    jest: true
   },
   parser: 'babel-eslint',
   rules: {
     strict: 0,
     'comma-dangle': 'off',
-    'react/jsx-filename-extension': [1, {extensions: ['.js', '.jsx']}],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'import/prefer-default-export': 'off',
     'react/jsx-one-expression-per-line': 'off',
-    'react/prop-types': ['error', {ignore: ['navigation']}],
+    'react/prop-types': ['error', { ignore: ['navigation'] }],
     'react/state-in-constructor': 'off',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
+    'react-hooks/exhaustive-deps': 'warn'
   },
   settings: {
     'import/resolver': {
-      'babel-module': {},
-    },
-  },
+      'babel-module': {}
+    }
+  }
 };
