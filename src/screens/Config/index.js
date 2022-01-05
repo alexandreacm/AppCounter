@@ -1,10 +1,38 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+
+import {
+  StyledBackground,
+  StyledTitle,
+  StyledButton,
+  StyledTextButton,
+  StyledContainerButton,
+  StyledContainerControl
+} from './styles';
 
 export default function Config() {
   return (
-    <View>
-      <Text>Config</Text>
-    </View>
+    <StyledBackground>
+      <StyledTitle>Counters</StyledTitle>
+
+      <StyledContainerButton>
+        <StyledButton>
+          <StyledTextButton>Add Counter</StyledTextButton>
+        </StyledButton>
+
+        <StyledButton>
+          <StyledTextButton>Remove Counter</StyledTextButton>
+        </StyledButton>
+      </StyledContainerButton>
+
+      <StyledContainerControl>
+        <StyledButton>
+          <StyledTextButton>Add Counter</StyledTextButton>
+        </StyledButton>
+
+        <StyledButton>
+          <StyledTextButton>Remove Counter</StyledTextButton>
+        </StyledButton>
+      </StyledContainerControl>
+    </StyledBackground>
   );
 }

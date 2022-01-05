@@ -12,6 +12,5 @@ module.exports = {
   tabWidth: 2,
   trailingComma: 'none',
   useTabs: false,
-  printWidth: 80,
-  endOfLine: 'auto',
+  printWidth: 80
 };
