@@ -7,7 +7,21 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "test:coverage": "jest --coverage --watchAll false",
+    "commit": "npx git-cz"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "jest --passWithNoTests"
+    }
+  },
+  "lint-staged": {
+    "./src/*.{js,jsx,}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@react-navigation/bottom-tabs": "^6.0.9",
@@ -15,6 +29,8 @@
     "@react-navigation/native-stack": "^6.2.5",
     "@reduxjs/toolkit": "^1.5.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
+    "lottie-ios": "3.1.8",
+    "lottie-react-native": "^3.5.0",
     "react": "17.0.2",
     "react-native": "0.66.4",
     "react-native-safe-area-context": "^3.3.2",
@@ -24,9 +40,7 @@
     "react-native-vector-icons": "^9.0.0",
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
-    "styled-components": "^5.3.3",
-    "lottie-ios": "3.1.8",
-    "lottie-react-native": "^3.5.0"
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
@@ -34,6 +48,7 @@
     "@babel/plugin-proposal-optional-chaining": "^7.12.7",
     "@babel/runtime": "^7.16.7",
     "@react-native-community/eslint-config": "^3.0.1",
+    "@testing-library/react-native": "^9.0.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^27.4.5",
     "babel-plugin-module-resolver": "^4.0.0",
@@ -56,5 +71,10 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }

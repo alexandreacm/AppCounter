@@ -4,6 +4,8 @@ import { StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import store from '@/store';
 
+import ThemeProvider from '@/components/ThemeProvider';
+
 import colors from '@/theme/colors';
 import Routes from '@/routes';
 
@@ -12,7 +14,9 @@ export default function App() {
     <>
       <StatusBar backgroundColor={colors.PRIMARY} barStyle='light-content' />
       <Provider store={store}>
-        <Routes />
+        <ThemeProvider>
+          <Routes />
+        </ThemeProvider>
       </Provider>
     </>
   );
