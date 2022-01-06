@@ -11,6 +11,7 @@ const StyledTitle = styled.Text`
   text-align: left;
   font-size: 20px;
   font-weight: bold;
+  color: ${colors.COLOR_WHITE};
 `;
 
 const StyledButton = styled.TouchableOpacity`
@@ -21,6 +22,16 @@ const StyledButton = styled.TouchableOpacity`
   align-items: center;
   border-radius: 10px;
   background-color: ${colors.CARD_SELECTED};
+`;
+
+const StyledImageButton = styled.TouchableOpacity`
+  width: 50%;
+  height: 40px;
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  background-color: ${colors.SECONDARY};
 `;
 
 const StyledTextButton = styled.Text`
@@ -60,5 +71,6 @@ export {
   StyledButton,
   StyledTextButton,
   StyledContainerButton,
-  StyledContainerControl
+  StyledContainerControl,
+  StyledImageButton
 };

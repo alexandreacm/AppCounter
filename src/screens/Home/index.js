@@ -1,46 +1,40 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FlatList } from 'react-native';
+import { useSelector } from 'react-redux';
 
-import { StyledBackground } from './styles';
+import {
+  StyledBackground,
+  StyledEmptyListContainer,
+  StyledLottie,
+  StyledEmptyTitle
+} from './styles';
 
 import CardCounter from '@/components/CardCounter';
+import counterEmpty from '../../assets/animations/empty-list.json';
 
 export default function Home() {
-  const [counters, setCounters] = useState([
-    {
-      id: 1,
-      name: 'Counter 1',
-      total: '0008'
-    },
-    {
-      id: 2,
-      name: 'Counter 2',
-      total: '0009'
-    },
-    {
-      id: 3,
-      name: 'Counter 3',
-      total: '0010'
-    },
-    {
-      id: 4,
-      name: 'Counter 5',
-      total: '0010'
-    },
-    {
-      id: 5,
-      name: 'Counter 5',
-      total: '0010'
-    }
-  ]);
+  const counters = useSelector(({ counters }) => counters.list);
+
+  function renderEmptyList() {
+    return (
+      <StyledEmptyListContainer>
+        <StyledLottie source={counterEmpty} autoPlay loop />
+        <StyledEmptyTitle>Counter List is empty</StyledEmptyTitle>
+      </StyledEmptyListContainer>
+    );
+  }
 
   return (
     <StyledBackground>
       <FlatList
-        contentContainerStyle={{ paddingHorizontal: 16, marginTop: 25 }}
+        style={{ marginTop: 15, marginBottom: 5 }}
+        contentContainerStyle={{
+          paddingHorizontal: 16
+        }}
         data={counters}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => <CardCounter data={item} />}
+        ListEmptyComponent={renderEmptyList}
       />
     </StyledBackground>
   );

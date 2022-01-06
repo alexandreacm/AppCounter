@@ -1,17 +1,18 @@
 import styled from 'styled-components/native';
 import colors from '@/theme/colors';
 
-const StyledCardBackground = styled.View`
-  flex: 1;
-  height: 160px;
-  background-color: ${colors.CARD_SELECTED};
-  margin-bottom: 30px;
+const StyledViewBackground = styled.TouchableOpacity`
+  width: 100%;
+  height: 150px;
+  padding: 10px;
+  background-color: ${({ selected }) =>
+    selected ? colors.CARD_SELECTED : colors.CARD_UNSELECTED};
   border-radius: 6px;
-  padding: 15px;
   border-width: 3px;
   border-color: #808080;
   elevation: 10;
   box-shadow: 0px 1px 25px ${colors.CARD_BACKGROUND_SHADOW};
+  margin-bottom: 20px;
 `;
 
 const StyledCounterName = styled.Text`
@@ -26,4 +27,4 @@ const StyledTotal = styled.Text`
   text-align: right;
 `;
 
-export { StyledCardBackground, StyledCounterName, StyledTotal };
+export { StyledViewBackground, StyledCounterName, StyledTotal };

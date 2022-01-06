@@ -1,12 +1,22 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import { StyledCardBackground, StyledCounterName, StyledTotal } from './styles';
+import { selectCounter } from '@/store/slices/counterSlice';
 
-export default function CardCounter({ data: { name, total } }) {
+import { StyledViewBackground, StyledCounterName, StyledTotal } from './styles';
+
+export default function CardCounter({ data: { id, name, total, selected } }) {
+  const dispatch = useDispatch();
+
   return (
-    <StyledCardBackground>
+    <StyledViewBackground
+      selected={selected}
+      onPress={() => {
+        dispatch(selectCounter({ id }));
+      }}
+    >
       <StyledCounterName>{name}</StyledCounterName>
       <StyledTotal>{total}</StyledTotal>
-    </StyledCardBackground>
+    </StyledViewBackground>
   );
 }
