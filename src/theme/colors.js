@@ -7,6 +7,8 @@ const colors = {
   BG: '#0082c9',
   CARD_SELECTED: '#d8d8d8',
   CARD_UNSELECTED: '#6dadd1',
+  TEXT_SELECTED: '#808080',
+  TEXT_UNSELECTED: '#333232',
   BUTTON_TEXT: '#14437b',
 
   BORDER_BOTTOM_COLOR: 'rgba(218, 218, 218, 0.4)',

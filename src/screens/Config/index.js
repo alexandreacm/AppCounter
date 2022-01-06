@@ -1,6 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addCounter, removeCounter } from '@/store/slices/counterSlice';
+
+import colors from '@/theme/colors';
+
+import {
+  addCounter,
+  removeCounter,
+  increment,
+  decrement
+} from '@/store/slices/counterSlice';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import {
@@ -10,18 +18,27 @@ import {
   StyledTextButton,
   StyledContainerButton,
   StyledContainerControl,
-  StyledImageButton
+  StyledImageButton,
+  StyledTitleControls
 } from './styles';
 
 export default function Config() {
   const dispatch = useDispatch();
 
-  function addNewCounter() {
+  function onAddNewCounter() {
     dispatch(addCounter());
   }
 
-  function deleteCounter() {
+  function onRemoveCounter() {
     dispatch(removeCounter());
+  }
+
+  function onIncrement() {
+    dispatch(increment());
+  }
+
+  function onDecrement() {
+    dispatch(decrement());
   }
 
   return (
@@ -29,22 +46,23 @@ export default function Config() {
       <StyledTitle>Counters</StyledTitle>
 
       <StyledContainerButton>
-        <StyledButton onPress={addNewCounter}>
+        <StyledButton onPress={onAddNewCounter}>
           <StyledTextButton>Add Counter</StyledTextButton>
         </StyledButton>
 
-        <StyledButton onPress={deleteCounter}>
+        <StyledButton onPress={onRemoveCounter}>
           <StyledTextButton>Remove Counter</StyledTextButton>
         </StyledButton>
       </StyledContainerButton>
 
+      <StyledTitleControls>Increment / Decrement </StyledTitleControls>
       <StyledContainerControl>
-        <StyledImageButton>
-          <Icon name='add' size={30} color='#FFF' />
+        <StyledImageButton onPress={onIncrement}>
+          <Icon name='add' size={30} color={colors.SECONDARY} />
         </StyledImageButton>
 
-        <StyledImageButton>
-          <Icon name='remove' size={30} color='#FFF' />
+        <StyledImageButton onPress={onDecrement}>
+          <Icon name='remove' size={30} color={colors.SECONDARY} />
         </StyledImageButton>
       </StyledContainerControl>
     </StyledBackground>

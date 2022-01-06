@@ -7,6 +7,15 @@ const initialState = {
   selectId: 0
 };
 
+function cleanList(state) {
+  state.list.forEach(item => (item.selected = false));
+}
+
+function maskedTotal(num) {
+  let placeLimit = -4;
+  return ('0000' + num).slice(placeLimit);
+}
+
 const counterSlice = createSlice({
   name: 'counters',
   initialState,
@@ -17,7 +26,7 @@ const counterSlice = createSlice({
       const newCounter = {
         id,
         name: `Counter ${id}`,
-        total: `000${id}`,
+        total: 0,
         selected: false
       };
 
@@ -39,13 +48,52 @@ const counterSlice = createSlice({
         counter => counter.id === action.payload.id
       );
 
-      state.list.forEach(item => (item.selected = false));
+      cleanList(state);
       state.list[index].selected = true;
+    },
+    increment: (state, action) => {
+      const index = state.list.findIndex(
+        counter => counter.id === state.selectId
+      );
+
+      let total =
+        state.selectId === 0
+          ? parseInt(state.list[0].total)
+          : parseInt(state.list[index].total);
+      let countTotal = (total += 1);
+
+      if (state.selectId != 0) {
+        state.list[index].total = maskedTotal(countTotal);
+      } else {
+        state.list[0].total = maskedTotal(countTotal);
+      }
+    },
+    decrement: state => {
+      const index = state.list.findIndex(
+        counter => counter.id === state.selectId
+      );
+
+      let total =
+        state.selectId === 0
+          ? parseInt(state.list[0].total)
+          : parseInt(state.list[index].total);
+      let countTotal = (total -= 1);
+
+      if (state.selectId != 0) {
+        state.list[index].total = maskedTotal(countTotal);
+      } else {
+        state.list[0].total = maskedTotal(countTotal);
+      }
     }
   }
 });
 
-export const { addCounter, removeCounter, selectCounter } =
-  counterSlice.actions;
+export const {
+  addCounter,
+  removeCounter,
+  selectCounter,
+  increment,
+  decrement
+} = counterSlice.actions;
 
 export default counterSlice.reducer;

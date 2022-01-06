@@ -25,13 +25,13 @@ const StyledButton = styled.TouchableOpacity`
 `;
 
 const StyledImageButton = styled.TouchableOpacity`
-  width: 50%;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin: 10px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  background-color: ${colors.SECONDARY};
+  background-color: ${colors.COLOR_WHITE};
 `;
 
 const StyledTextButton = styled.Text`
@@ -55,7 +55,7 @@ const StyledContainerControl = styled.View`
   width: 100%;
   height: 170px;
   padding: 25px;
-  top: 30px;
+  top: 10px;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -65,6 +65,13 @@ const StyledContainerControl = styled.View`
   margin-bottom: 10px;
 `;
 
+const StyledTitleControls = styled.Text`
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: ${colors.COLOR_WHITE};
+`;
+
 export {
   StyledBackground,
   StyledTitle,
@@ -72,5 +79,6 @@ export {
   StyledTextButton,
   StyledContainerButton,
   StyledContainerControl,
-  StyledImageButton
+  StyledImageButton,
+  StyledTitleControls
 };

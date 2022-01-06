@@ -16,7 +16,7 @@ const StyledViewBackground = styled.TouchableOpacity`
 `;
 
 const StyledCounterName = styled.Text`
-  color: #808080;
+  color: ${colors.TEXT_SELECTED};
   font-size: 25px;
   text-align: left;
 `;
