@@ -10,7 +10,7 @@
 
 ## 💻 Project
 
-An example application to implement counter with redux, react-redux,
+An example application to implement the counter with redux, react-redux,
 @reduxjs/toolkit.
 
 # Team
