@@ -48,7 +48,7 @@ Use **yarn** or **npm install** to install project dependencies. Then start the
 project.
 
 ```cl
-yarn android or react-native run
+yarn android or react-native run android/ios
 ```
 
 ## Running the tests
@@ -56,7 +56,7 @@ yarn android or react-native run
 Use **yarn jest -u** or **yarn test** to execute the jest tests.
 
 ```cl
-yarn jest or test
+yarn jest or yarn test
 ```
 
 <br />
