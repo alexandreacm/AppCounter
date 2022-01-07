@@ -1,5 +1,4 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { globalState } from '@/store/slices/counterSlice';
 
 jest.mock('@react-navigation/native', () => {
   const originalModule = jest.requireActual('@react-navigation/native');
@@ -20,5 +19,4 @@ jest.mock('@react-navigation/native', () => {
 
 jest.mock('react-redux');
 
-useSelector.mockImplementation(fn => fn(globalState));
 useDispatch.mockReturnValue(jest.fn);

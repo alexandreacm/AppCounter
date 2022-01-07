@@ -1,9 +1,4 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import counterReducer from './counterSlice';
 
-import counters, { counterState } from './counterSlice';
-
-export const globalState = {
-  counters: counterState
-};
-
-export default combineReducers({ counters });
+export default combineReducers({ counters: counterReducer });

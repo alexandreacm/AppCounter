@@ -96,6 +96,4 @@ export const {
   decrement
 } = counterSlice.actions;
 
-export const counterState = initialState;
-
 export default counterSlice.reducer;
