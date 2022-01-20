@@ -6,7 +6,8 @@ import {
   StyledBackground,
   StyledEmptyListContainer,
   StyledLottie,
-  StyledEmptyTitle
+  StyledEmptyTitle,
+  StyledFlatList
 } from './styles';
 
 import CardCounter from '@/components/CardCounter';
@@ -26,11 +27,8 @@ export default function Home() {
 
   return (
     <StyledBackground>
-      <FlatList
+      <StyledFlatList
         style={{ marginTop: 15, marginBottom: 5 }}
-        contentContainerStyle={{
-          paddingHorizontal: 16
-        }}
         data={counters}
         keyExtractor={item => item.id.toString()}
         renderItem={({ item }) => <CardCounter data={item} />}

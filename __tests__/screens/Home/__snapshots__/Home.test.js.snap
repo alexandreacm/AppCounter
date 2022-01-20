@@ -17,7 +17,7 @@ exports[`tests in HomeScreen matches snapshot 1`] = `
     ListEmptyComponent={[Function]}
     contentContainerStyle={
       Object {
-        "paddingHorizontal": 16,
+        "paddingHorizontal": 10,
       }
     }
     getItem={[Function]}
@@ -35,10 +35,13 @@ exports[`tests in HomeScreen matches snapshot 1`] = `
     scrollEventThrottle={50}
     stickyHeaderIndices={Array []}
     style={
-      Object {
-        "marginBottom": 5,
-        "marginTop": 15,
-      }
+      Array [
+        Object {},
+        Object {
+          "marginBottom": 5,
+          "marginTop": 15,
+        },
+      ]
     }
     viewabilityConfigCallbackPairs={Array []}
   >

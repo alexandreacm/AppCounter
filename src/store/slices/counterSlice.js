@@ -88,12 +88,14 @@ const counterSlice = createSlice({
   }
 });
 
+const { actions, reducer } = counterSlice;
+
 export const {
   addCounter,
   removeCounter,
   selectCounter,
   increment,
   decrement
-} = counterSlice.actions;
+} = actions;
 
-export default counterSlice.reducer;
+export default reducer;

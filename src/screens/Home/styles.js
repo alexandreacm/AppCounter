@@ -25,9 +25,16 @@ const StyledEmptyTitle = styled.Text`
   text-align: center;
 `;
 
+const StyledFlatList = styled.FlatList.attrs({
+  contentContainerStyle: {
+    paddingHorizontal: 10
+  }
+})``;
+
 export {
   StyledBackground,
   StyledEmptyListContainer,
   StyledLottie,
-  StyledEmptyTitle
+  StyledEmptyTitle,
+  StyledFlatList
 };
