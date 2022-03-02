@@ -86,6 +86,11 @@ const counterSlice = createSlice({
       }
     }
   }
+  /*COINS_SUCCESS: (state, payload) => ({
+      ...state,
+      coinsData: action.coinsData,
+      isLoading: false
+    }),*/
 });
 
 const { actions, reducer } = counterSlice;
