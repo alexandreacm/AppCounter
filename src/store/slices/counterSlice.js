@@ -13,7 +13,8 @@ function cleanList(state) {
 
 function maskedTotal(num) {
   let placeLimit = -4;
-  return ('0000' + num).slice(placeLimit);
+  //return ('0000' + num).slice(placeLimit);
+  return String(num).padStart(4, '0');
 }
 
 const counterSlice = createSlice({
