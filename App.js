@@ -6,8 +6,8 @@ import store from '@/store';
 
 import ThemeProvider from '@/components/ThemeProvider';
 
-import colors from '@/theme/colors';
-import Routes from '@/routes';
+import colors from '@/theme/colors'
+import Routes from '@/routes'
 
 export default function App() {
   return (
